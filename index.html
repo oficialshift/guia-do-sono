@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guia do sono — Ufa Mãe</title>
+  <meta name="description" content="Um guia curto pra mães, com base nas orientações da SBP e da AAP, pra entender o sono do seu bebê e deixar o fim do dia mais leve, com sono seguro." />
+  <meta property="og:title" content="Guia do sono — Ufa Mãe" />
+  <meta property="og:description" content="Um guia curto pra mães, com base nas orientações da SBP e da AAP, pra entender o sono do seu bebê e deixar o fim do dia mais leve, com sono seguro." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" />
+  <style>
+    :root {
+      --radius: 1.25rem;
+      --radius-3xl: calc(var(--radius) + 12px);
+      --background: oklch(0.982 0.014 85);
+      --foreground: oklch(0.32 0.045 200);
+      --card: oklch(0.995 0.008 85);
+      --primary: oklch(0.7 0.153 28);
+      --primary-foreground: oklch(0.99 0.01 85);
+      --secondary: oklch(0.56 0.073 172);
+      --secondary-foreground: oklch(0.99 0.01 85);
+      --muted: oklch(0.955 0.02 60);
+      --muted-foreground: oklch(0.52 0.03 200);
+      --accent: oklch(0.85 0.06 300);
+      --sun: oklch(0.85 0.13 85);
+      --blush: oklch(0.94 0.03 30);
+      --font-display: "Baloo 2", system-ui, sans-serif;
+      --font-body: Nunito, system-ui, sans-serif;
+      --shadow-soft: 0 18px 40px -22px oklch(0.5 0.08 30 / 0.45);
+      --max: 72rem;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      overflow-x: hidden;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .wrap {
+      width: min(100% - 3rem, var(--max));
+      margin-inline: auto;
+    }
+    .wrap-narrow { width: min(100% - 3rem, 48rem); margin-inline: auto; }
+    .wrap-offer { width: min(100% - 3rem, 56rem); margin-inline: auto; }
+
+    .marker-sun {
+      background: color-mix(in oklab, var(--sun) 45%, transparent);
+      border-radius: 0.6rem;
+      padding: 0.05em 0.35em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .marker-lavender {
+      background: color-mix(in oklab, var(--accent) 60%, transparent);
+      border-radius: 0.6rem;
+      padding: 0.05em 0.35em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .marker-coral {
+      background: color-mix(in oklab, var(--primary) 28%, transparent);
+      border-radius: 0.6rem;
+      padding: 0.05em 0.35em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .card-soft {
+      background: var(--card);
+      border-radius: var(--radius-3xl);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* CTA */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.15s ease;
+    }
+    .cta:hover { transform: scale(1.03); }
+    .cta svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+
+    /* Hero */
+    .hero {
+      padding: 3rem 0 4rem;
+    }
+    .hero-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .logo {
+      width: 6rem;
+      height: 6rem;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--secondary) 15%, transparent);
+      color: var(--secondary);
+      padding: 0.25rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+    .hero h1 {
+      margin-top: 1rem;
+      font-size: clamp(1.85rem, 6vw, 3rem);
+    }
+    .hero .sub {
+      margin-top: 1.25rem;
+      max-width: 32rem;
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+    }
+    .hero-buy {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .price-block .value {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--foreground);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .price-block .hint {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+    .hero-photo {
+      position: relative;
+    }
+    .hero-photo img.shot {
+      width: 100%;
+      border-radius: 2rem;
+      object-fit: cover;
+      box-shadow: var(--shadow-soft);
+    }
+    @media (min-width: 768px) {
+      .hero { padding: 5rem 0; }
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .logo { width: 7rem; height: 7rem; }
+      .hero-photo img.shot { height: 560px; }
+    }
+    .hero-cover {
+      position: absolute;
+      left: -0.75rem;
+      bottom: -1.25rem;
+      width: 7.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 16px 32px -12px oklch(0.4 0.08 30 / 0.55);
+    }
+    @media (min-width: 768px) {
+      .hero-cover { left: -1.5rem; bottom: -1.5rem; width: 11rem; }
+    }
+
+    /* Sections */
+    section { padding: 4rem 0; }
+    .blush { background: color-mix(in oklab, var(--blush) 60%, transparent); }
+    .center { text-align: center; }
+    h2 { font-size: clamp(1.7rem, 4.5vw, 2.25rem); }
+    .lead {
+      margin-top: 1.25rem;
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+    }
+    .lead strong { color: var(--foreground); font-weight: 700; }
+
+    .signs { margin-top: 2rem; display: grid; gap: 0.75rem; text-align: left; }
+    .sign {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      background: var(--card);
+      border-radius: 1.25rem;
+      padding: 1rem 1.15rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 1.05rem;
+    }
+    .sign .dot {
+      flex-shrink: 0;
+      width: 0.65rem;
+      height: 0.65rem;
+      margin-top: 0.55rem;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+    .closing {
+      margin-top: 1.5rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--foreground);
+    }
+
+    /* Contents */
+    .split {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .split { grid-template-columns: 1fr 1fr; }
+    }
+    .checklist { margin-top: 1.5rem; list-style: none; display: grid; gap: 1rem; }
+    .checklist li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 1.125rem;
+    }
+    .checklist svg {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: 0.15rem;
+      color: var(--secondary);
+    }
+    .format-note {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--muted-foreground);
+    }
+
+    /* Inside the guide */
+    .pages {
+      margin-top: 2.5rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media (min-width: 700px) {
+      .pages { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    .page-card {
+      background: var(--card);
+      border-radius: var(--radius-3xl);
+      box-shadow: var(--shadow-soft);
+      padding: 1rem 1rem 1.25rem;
+    }
+    .page-card img {
+      width: 100%;
+      border-radius: 1.25rem;
+      box-shadow: 0 8px 24px -12px oklch(0.4 0.05 200 / 0.35);
+    }
+    .page-card p {
+      margin-top: 0.85rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-wrap: balance;
+    }
+
+    /* Bonuses */
+    .bonus-grid {
+      margin-top: 2.5rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media (min-width: 700px) {
+      .bonus-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .bonus-card {
+      background: var(--card);
+      border-radius: var(--radius-3xl);
+      box-shadow: var(--shadow-soft);
+      padding: 1.25rem;
+      display: grid;
+      gap: 1rem;
+      align-items: center;
+    }
+    @media (min-width: 500px) {
+      .bonus-card { grid-template-columns: 7.5rem 1fr; }
+    }
+    .bonus-card img {
+      width: 100%;
+      max-width: 7.5rem;
+      margin-inline: auto;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .bonus-tag {
+      display: inline-block;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--primary) 15%, transparent);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+    }
+    .bonus-card h3 { margin-top: 0.4rem; font-size: 1.25rem; }
+    .bonus-card p { margin-top: 0.35rem; color: var(--muted-foreground); }
+
+    /* For whom */
+    .two {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1.25rem;
+    }
+    @media (min-width: 700px) { .two { grid-template-columns: 1fr 1fr; } }
+    .two .card-soft { padding: 1.5rem 1.6rem; }
+    .two h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .two p { color: var(--muted-foreground); }
+    .signed {
+      margin-top: 1.5rem;
+      text-align: center;
+      color: var(--muted-foreground);
+      font-size: 1.05rem;
+    }
+
+    /* Offer */
+    #checkout { scroll-margin-top: 1.5rem; }
+    .offer {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem;
+    }
+    @media (min-width: 768px) {
+      .offer {
+        grid-template-columns: 13.75rem 1fr;
+        padding: 3rem;
+      }
+    }
+    .offer .capa {
+      width: 11rem;
+      margin-inline: auto;
+      border-radius: 1rem;
+      box-shadow: 0 18px 40px -18px oklch(0.4 0.08 30 / 0.5);
+    }
+    .offer h2 { font-size: 2rem; margin-top: 0.65rem; }
+    .offer .desc { margin-top: 0.5rem; color: var(--muted-foreground); }
+    .offer .price {
+      margin-top: 1.5rem;
+      font-size: 2.25rem;
+      font-weight: 800;
+      font-family: var(--font-display);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .offer .pay { font-size: 0.875rem; color: var(--muted-foreground); }
+    .offer .cta { margin-top: 1.5rem; }
+    .perks {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      text-align: center;
+    }
+    @media (min-width: 600px) { .perks { grid-template-columns: repeat(4, 1fr); } }
+    .perks svg { width: 1.5rem; height: 1.5rem; margin: 0 auto; color: var(--secondary); }
+    .perks p { margin-top: 0.25rem; font-size: 0.875rem; color: var(--muted-foreground); }
+
+    /* FAQ */
+    .faq { display: grid; gap: 1rem; margin-top: 2rem; }
+    .faq .card-soft { padding: 1.5rem; }
+    .faq h3 { font-size: 1.125rem; }
+    .faq p { margin-top: 0.5rem; color: var(--muted-foreground); }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: var(--secondary-foreground);
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    footer .brand {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+    footer .tag {
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+    footer .safe {
+      margin-top: 1.25rem;
+      font-size: 0.875rem;
+      opacity: 0.8;
+      max-width: 40rem;
+      margin-inline: auto;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Checkout: troque só o valor de CHECKOUT_URL pelo link da Kiwify, quando o produto estiver no ar.
+    Enquanto isso, os botões levam à oferta nesta página.
+  -->
+  <script>
+    const CHECKOUT_URL = 'https://pay.kiwify.com.br/4mXU3qg';
+  </script>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <img class="logo" src="logo.png" width="112" height="112" alt="Ufa Mãe" />
+        <p class="badge">Para bebês de 0 a 12 meses</p>
+        <h1>Ele só dorme no colo, e você já nem sabe<br><span class="marker-sun">que horas são.</span></h1>
+        <p class="sub">Um guia curto pra mães, com base nas orientações da SBP e da AAP, pra entender o sono do seu bebê e deixar o fim do dia mais leve, com sono seguro.</p>
+        <div class="hero-buy">
+          <a class="cta" data-cta href="#checkout">Quero o Guia do sono <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <p class="price-block">
+            <span class="value">R$ 27,00</span>
+            <span class="hint">pagamento único</span>
+          </p>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img class="shot" src="hero.jpg" width="1280" height="1600" alt="Mãe abraçando seu bebê que dorme tranquilo" />
+        <img class="hero-cover" src="capa.png" width="1080" height="1080" alt="Capa do Guia do sono — Ufa Mãe" />
+      </div>
+    </div>
+  </header>
+
+  <section class="blush">
+    <div class="wrap-narrow center">
+      <h2>Se você está lendo isso de madrugada, com o bebê no colo, <span class="marker-lavender">respira.</span></h2>
+      <p class="lead">Você não está fazendo nada errado. O sono do bebê muda o tempo todo, e quase ninguém explica isso de um jeito simples.</p>
+      <div class="signs">
+        <div class="sign"><span class="dot" aria-hidden="true"></span><p>Ele só dorme no colo e acorda quando você coloca no berço.</p></div>
+        <div class="sign"><span class="dot" aria-hidden="true"></span><p>Trocou o dia pela noite.</p></div>
+        <div class="sign"><span class="dot" aria-hidden="true"></span><p>Acorda pra mamar e você não sabe se é fome ou costume.</p></div>
+      </div>
+      <p class="closing">Se alguma dessas é a sua noite, esse guia foi feito pra você.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>O que tem no guia</h2>
+        <ul class="checklist">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+            <span>Como o sono do bebê muda em cada fase, em linguagem de gente</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+            <span>As 3 dúvidas que mais tiram o sono: só dorme no colo, trocou o dia pela noite, acordar pra mamar</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+            <span>Uma rotina simples de fim de dia, passo a passo</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+            <span>As orientações de sono seguro, ponto a ponto</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+            <span>Quando procurar o pediatra, e o que fazer quando quem não está bem é você</span>
+          </li>
+        </ul>
+        <p class="format-note">PDF de 25 páginas pra bebês de 0 a 12 meses, com 15 referências da SBP e da AAP. Pra ler no celular, inclusive de madrugada.</p>
+      </div>
+      <div>
+        <h2 class="visually-on-mobile" style="margin-bottom:1.25rem;">Veja por dentro</h2>
+        <div class="pages" style="margin-top:0;">
+          <figure class="page-card">
+            <img src="guia-p04.png" width="586" height="1039" alt="Página do guia: como o sono muda em cada fase, com ilustração das faixas de 0 a 12 meses" />
+            <figcaption><p>Como o sono muda em cada fase</p></figcaption>
+          </figure>
+          <figure class="page-card">
+            <img src="guia-p08.png" width="586" height="1039" alt="Página do guia: transferência do colo para o berço, em três passos ilustrados" />
+            <figcaption><p>As 3 dúvidas que mais tiram o sono</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blush">
+    <div class="wrap">
+      <h2 class="center">Bônus pra imprimir e usar no dia a dia</h2>
+      <p class="lead center" style="max-width:40rem;margin-inline:auto;">Junto com o guia, você recebe dois imprimíveis. São parte da oferta de <span style="white-space:nowrap">R$ 27,00</span>.</p>
+      <div class="bonus-grid">
+        <article class="bonus-card">
+          <img src="bonus-quadro-rotina.png" width="744" height="1053" alt="Prévia do quadro da rotina de fim de dia" />
+          <div>
+            <span class="bonus-tag">Bônus 1</span>
+            <h3>Quadro da rotina</h3>
+            <p>A rotina de fim de dia pra imprimir e deixar na geladeira.</p>
+          </div>
+        </article>
+        <article class="bonus-card">
+          <img src="bonus-checklist-berco-seguro.png" width="744" height="1053" alt="Prévia do checklist de berço seguro" />
+          <div>
+            <span class="bonus-tag">Bônus 2</span>
+            <h3>Checklist do berço seguro</h3>
+            <p>Pra conferir antes de deitar o bebê, com as orientações de sono seguro.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap-narrow">
+      <h2 class="center">Pra quem é — e pra quem não é</h2>
+      <div class="two">
+        <div class="card-soft">
+          <h3>É pra você</h3>
+          <p>Que quer entender o que está acontecendo e montar uma rotina mais leve, sem culpa.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Não é tratamento</h3>
+          <p>Se o seu bebê tem algum problema de saúde, a conversa é com o pediatra.</p>
+        </div>
+      </div>
+      <p class="signed">Assinado pela marca Ufa Mãe, com base nas orientações da SBP e da AAP.</p>
+    </div>
+  </section>
+
+  <section id="checkout">
+    <div class="wrap-offer">
+      <div class="card-soft offer">
+        <img class="capa" src="capa.png" width="1080" height="1080" alt="Guia do sono — Ufa Mãe em PDF" />
+        <div>
+          <p class="badge" style="margin-top:0;">Guia do sono — Ufa Mãe</p>
+          <h2>O guia + os 2 imprimíveis</h2>
+          <p class="desc">Um guia curto pra mães de bebês de 0 a 12 meses entenderem o sono do bebê e deixarem o fim do dia mais leve, com sono seguro.</p>
+          <p class="price">R$ 27,00</p>
+          <p class="pay">pagamento único, sem mensalidade</p>
+          <a class="cta" data-cta href="#checkout">Quero o Guia do sono <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <div class="perks">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+              <p>Guia em PDF, 25 páginas</p>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M12 3v11"/><path d="m8 10 4 4 4-4"/></svg>
+              <p>Chega no seu e-mail depois do pagamento</p>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              <p>2 bônus pra imprimir</p>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              <p>Garantia de 7 dias</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="format-note center" style="margin-top:1.25rem;">Garantia de 7 dias pela plataforma. Se não fizer sentido pra você, o valor volta.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;padding-bottom:5rem;">
+    <div class="wrap-narrow">
+      <h2 class="center">Perguntas frequentes</h2>
+      <div class="faq">
+        <div class="card-soft">
+          <h3>Vai fazer meu bebê dormir a noite toda?</h3>
+          <p>Ninguém pode prometer isso, e desconfie de quem promete. O guia te ajuda a entender o que está acontecendo e a montar uma rotina mais leve.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Pra que idade serve?</h3>
+          <p>Pra bebês de 0 a 12 meses.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Substitui o pediatra?</h3>
+          <p>Não. Ele complementa, e dúvida de saúde vai sempre pro pediatra.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Como eu recebo?</h3>
+          <p>Pela Kiwify. O PDF chega no seu e-mail logo depois do pagamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="brand">Ufa Mãe</p>
+    <p class="tag">Assinado pela marca Ufa Mãe, com base nas orientações da SBP e da AAP.</p>
+    <p class="safe">Este guia não substitui o acompanhamento do pediatra. Siga as orientações de sono seguro: bebê de barriga pra cima, em superfície firme e plana, sem travesseiro, protetor, cobertor solto ou bichinho no berço.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-cta]').forEach(function (a) {
+      a.setAttribute('href', CHECKOUT_URL);
+    });
+  </script>
+</body>
+</html>
